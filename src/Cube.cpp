@@ -69,7 +69,6 @@ void Cube::rotate(const Plane& plane, const Vertex& axis, GLdouble radians)
 
   // Rotate sides
   MapSidePtr::iterator it;
-  unsigned int i = 0;
   for (it = sides.begin(); it != sides.end(); ++it)
   {
     SidePtr sidePtr = (*it).second;

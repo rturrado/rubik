@@ -3,7 +3,6 @@
 #include "Side.hpp"
 
 using namespace Rubik::Graphics;
-using namespace std;
 
 /*static*/
 unsigned int Side::sideCounter = 0;
@@ -17,7 +16,7 @@ void Side::selectSide(unsigned int which)
   selectedSide = which;
 }
 
-// Vertices are given counter clockwise,
+// Vertices are given counterclockwise,
 // looking at the side from the outside,
 // bottom left, bottom right, top right, top left
 //
@@ -76,7 +75,7 @@ Side::Side(const Vertex& _v0,
            const Vertex& _v1,
            const Vertex& _v2,
            const Vertex& _v3)
-: c(0, 0, 0), v0(_v0), v1(_v1), v2(_v2), v3(_v3), which(sideCounter++)
+: v0(_v0), v1(_v1), v2(_v2), v3(_v3), c(0, 0, 0), which(sideCounter++)
 {
   // Do nothing
 }

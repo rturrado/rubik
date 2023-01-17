@@ -32,7 +32,7 @@ Slice::Slice(const Plane& p, unsigned int w)
             break;
   }
   // positions
-  for (int i = 0; i < numberOfCubesPerSide; i++)
+  for (unsigned int i = 0; i < numberOfCubesPerSide; i++)
   {
     unsigned int index;
     switch (plane)

@@ -66,6 +66,7 @@ FacePosition& rotateFacePosition(FacePosition& f,
     case y: return rotateFacePositionY(f, clockwise);
     case z: return rotateFacePositionZ(f, clockwise);
   }
+  return f;
 }
 
 } // namespace Graphics 

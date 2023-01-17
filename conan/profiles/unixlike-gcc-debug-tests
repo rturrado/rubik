@@ -1,0 +1,10 @@
+include(unixlike-gcc-debug)
+
+[settings]
+
+[options]
+
+[build_requires]
+
+[env]
+RUBIK_BUILD_TESTS=True

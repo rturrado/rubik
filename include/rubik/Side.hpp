@@ -18,14 +18,14 @@ typedef std::map<FacePosition, SidePtr> MapSidePtr;
 
 class Side
 {
-  static unsigned int sideCounter; 
-  static unsigned int selectedSide; 
-  unsigned int which;
-  Color c;
+  static unsigned int sideCounter;
+  static unsigned int selectedSide;
   Vertex v0;
   Vertex v1;
   Vertex v2;
   Vertex v3;
+  Color c;
+  unsigned int which;
   Side(const Vertex&, const Vertex&, const Vertex&, const Vertex&);
 public:
   static void selectSide(unsigned int);

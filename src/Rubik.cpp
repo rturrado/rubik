@@ -68,11 +68,11 @@ const int numberOfMovements = 50;
 void drawRubik()
 {
   // Cubes
-  for (int x = 0; x < numberOfCubesPerSideLine; x++)
+  for (unsigned int x = 0; x < numberOfCubesPerSideLine; x++)
   {
-    for (int y = 0; y < numberOfCubesPerSideLine; y++)
+    for (unsigned int y = 0; y < numberOfCubesPerSideLine; y++)
     {
-      for (int z = 0; z < numberOfCubesPerSideLine; z++)
+      for (unsigned int z = 0; z < numberOfCubesPerSideLine; z++)
       {
         PositionPtr positionPtr(Position::getPosition(Coord(x, y, z)));
         CubePtr cubePtr(positionPtr->getCube());
@@ -98,7 +98,7 @@ void display()
   glutSwapBuffers();
 }
 
-void keyboard(unsigned char key, int x, int y)
+void keyboard(unsigned char key, int, int)
 {
   static unsigned int axis = 0;
 
@@ -125,7 +125,7 @@ void processHits(GLint numberOfHits, GLuint *buffer)
   cout << "numberOfHits: " << numberOfHits << endl;
 
   GLuint numberOfNames;
-  for (unsigned int i = 0; i < numberOfHits; i++)
+  for (int i = 0; i < numberOfHits; i++)
   {
     numberOfNames = *buffer;
     cout << "number of names: " << *buffer++ << endl;
@@ -180,7 +180,7 @@ void selection(int x, int y)
     GLuint objectMinZ = buffer[1];
     GLuint objectName = buffer[3];
     cout << "minZ: " << objectMinZ << "\tname: " << objectName << endl;
-    for (unsigned int i = 1; i < numberOfHits; i++)
+    for (int i = 1; i < numberOfHits; i++)
     {
       cout << "[selection] evaluating hit: " << i+1 << endl;
       if (buffer[i*4+1] < objectMinZ)
@@ -195,7 +195,7 @@ void selection(int x, int y)
   }
 }
 
-void mouse(int button, int state, int x, int y)
+void mouse(int, int, int, int)
 { 
 }
 
@@ -233,11 +233,11 @@ void initCube()
 {
   // Create positions and cubes, and
   // associate cubes to positions
-  for (int x = 0; x < numberOfCubesPerSideLine; x++)
+  for (unsigned int x = 0; x < numberOfCubesPerSideLine; x++)
   {
-    for (int y = 0; y < numberOfCubesPerSideLine; y++)
+    for (unsigned int y = 0; y < numberOfCubesPerSideLine; y++)
     {
-      for (int z = 0; z < numberOfCubesPerSideLine; z++)
+      for (unsigned int z = 0; z < numberOfCubesPerSideLine; z++)
       {
         Coord coord(x, y, z);
         PositionPtr positionPtr(Position::getPosition(coord));
@@ -256,7 +256,7 @@ void initCube()
     FacePtr facePtr(Face::getFace(facePosition));
     SlicePtr slicePtr(facePtr->getSlice());
     // Get cubes in each face
-    for (int i = 0; i < numberOfCubesPerSide; i++)
+    for (unsigned int i = 0; i < numberOfCubesPerSide; i++)
     {
       PositionPtr positionPtr(slicePtr->getPosition(i));
       CubePtr cubePtr(positionPtr->getCube());

@@ -55,6 +55,7 @@ GLdouble* getRotationMatrix(const Plane& plane, bool clockwise)
     case z: return clockwise ? rotationMatrixZClockwise
                              : rotationMatrixZAnticlockwise;
   }
+  return nullptr;
 }
 
 // Does a 90º rotation
